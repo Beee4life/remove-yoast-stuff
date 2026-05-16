@@ -1,0 +1,21 @@
+{
+  "name":         "beee4lfe/remove-yoast-stuff",
+  "description":  "A plugin to remove all Yoast' upsells and notices",
+  "type":         "wordpress-plugin",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url":  "git@gitlab.com:beee4lfe/remove-yoast-stuff.git"
+    }
+  ],
+  "license":      "GPL-2.0+",
+  "authors":      [
+    {
+      "name":     "Berry Plasman",
+      "homepage": "https://berryplasman.com"
+    }
+  ],
+  "require":      {
+    "composer/installers": "~2.0"
+  }
+}
