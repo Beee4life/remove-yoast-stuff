@@ -14,3 +14,8 @@ div[class*='MetaboxWarning__WarningBox-'],
 .yoast-alertX {
     display: none !important;
 }
+
+/* Remove upsell "Upgrade to Yoast SEO Premium" on dashboard */
+#wpbody-content #yoast-seo-general .yst-root main .yst-p-6.yst-flex.yst-flex-col {
+    display: none !important;
+}
