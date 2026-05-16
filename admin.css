@@ -1,0 +1,16 @@
+/**
+ * Remove annoying sidebar
+ *
+ * @return void
+ */
+.wpseo_content_cell #sidebar {
+    display: none;
+}
+
+/* @src: https://gist.github.com/wpchannel/7cdd6eed0927ea5732d7?permalink_comment_id=2894460#gistcomment-2894460 */
+div[class*='MetaboxWarning__WarningBox-'],
+#robotsmessage,
+.yoast_premium_upsell,
+.yoast-alertX {
+    display: none !important;
+}
