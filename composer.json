@@ -1,11 +1,11 @@
 {
-  "name":         "beee4lfe/remove-yoast-stuff",
+  "name":         "beee4life/remove-yoast-stuff",
   "description":  "A plugin to remove all Yoast' upsells and notices",
   "type":         "wordpress-plugin",
   "repositories": [
     {
       "type": "vcs",
-      "url":  "git@gitlab.com:beee4lfe/remove-yoast-stuff.git"
+      "url":  "git@gitlab.com:beee4life/remove-yoast-stuff.git"
     }
   ],
   "license":      "GPL-2.0+",
