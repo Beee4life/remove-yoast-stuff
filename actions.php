@@ -7,7 +7,7 @@
      * @another ref: https://gist.github.com/wpchannel/7cdd6eed0927ea5732d7
      * @see: https://wordpress.stackexchange.com/a/352509
      */
-    function pb_unbind_yoast_slug_change_watchers() {
+    function b3_unbind_yoast_slug_change_watchers() {
         $priority = 10;
         $actions_methods = [
             'wp_trash_post'        => 'detect_post_trash',
@@ -24,9 +24,9 @@
             }
         }
     }
-    add_action( 'plugins_loaded', 'pb_unbind_yoast_slug_change_watchers', 5 );
+    add_action( 'plugins_loaded', 'b3_unbind_yoast_slug_change_watchers', 5 );
 
-    function pb_remove_admin_notices() {
+    function b3_remove_admin_notices() {
         if ( is_plugin_active( 'wordpress-seo/wp-seo.php' ) ) {
             if ( ! class_exists( 'Yoast_Notification_Center' ) ) {
                 require_once( WP_PLUGIN_DIR . '/wordpress-seo/admin/class-yoast-notification-center.php' );
@@ -35,17 +35,17 @@
             remove_action( 'admin_notices', [ Yoast_Notification_Center::get(), 'display_notifications' ] );
         }
     }
-    add_action( 'admin_init', 'pb_remove_admin_notices' );
+    add_action( 'admin_init', 'b3_remove_admin_notices' );
 
-    function pb_remove_yoast_zapier_text() {
+    function b3_remove_yoast_zapier_text() {
         if ( class_exists( 'Yoast\WP\SEO\Integrations\Third_Party\Zapier_Free' ) ) {
             $zapier_free = YoastSEO()->classes->get( Yoast\WP\SEO\Integrations\Third_Party\Zapier_Free::class );
             remove_action( 'wpseo_publishbox_misc_actions', [ $zapier_free, 'add_publishbox_text' ] );
         }
     }
-    add_action( 'init', 'pb_remove_yoast_zapier_text' );
+    add_action( 'init', 'b3_remove_yoast_zapier_text' );
 
-    function pb_remove_yoast_ads() {
+    function b3_remove_yoast_ads() {
         // check if class Yoast_Notification_Center exists
         if ( ! class_exists( 'Yoast_Notification_Center' ) ) {
             return;
@@ -73,7 +73,7 @@
             }
         }
     }
-    add_action( 'admin_notices', 'pb_remove_yoast_ads', 5 );
+    add_action( 'admin_notices', 'b3_remove_yoast_ads', 5 );
 
     /*
      * Remove any filter.
@@ -110,7 +110,7 @@
         remove_class_hook( 'admin_notices', 'WPSEO_Admin_Init', 'permalink_settings_notice' );
     });
 
-    function pb_unset_yoast_menu_items() {
+    function b3_unset_yoast_menu_items() {
         global $submenu;
         // unset( $submenu[ 'wpseo_dashboard' ][ 2 ] ); // integrations
         unset( $submenu[ 'wpseo_dashboard' ][ 3 ] ); // academy
@@ -118,17 +118,17 @@
         unset( $submenu[ 'wpseo_dashboard' ][ 5 ] ); // upgrade button
         unset( $submenu[ 'wpseo_dashboard' ][ 6 ] ); // AI insights button
     }
-    add_action( 'admin_menu', 'pb_unset_yoast_menu_items' );
+    add_action( 'admin_menu', 'b3_unset_yoast_menu_items' );
 
     /*
      * Disable Yoast dropdowns
      * @src: https://wordpress.stackexchange.com/a/300965/103402
      */
-    function pb_remove_yoast_seo_admin_filters() {
+    function b3_remove_yoast_seo_admin_filters() {
         global $wpseo_meta_columns ;
         if ( $wpseo_meta_columns ) {
             remove_action( 'restrict_manage_posts', [ $wpseo_meta_columns, 'posts_filter_dropdown' ] );
             remove_action( 'restrict_manage_posts', [ $wpseo_meta_columns, 'posts_filter_dropdown_readability' ] );
         }
     }
-    add_action( 'admin_init', 'pb_remove_yoast_seo_admin_filters', 20 );
+    add_action( 'admin_init', 'b3_remove_yoast_seo_admin_filters', 20 );

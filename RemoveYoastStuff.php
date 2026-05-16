@@ -22,13 +22,13 @@
 
         class RemoveYoastStuff {
             public function __construct() {
-                add_action( 'admin_enqueue_scripts',  [ $this, 'pb_enqueue_admin_css' ] );
+                add_action( 'admin_enqueue_scripts',  [ $this, 'enqueue_admin_css' ] );
 
                 include 'actions.php';
                 include 'filters.php';
             }
 
-            public function pb_enqueue_admin_css() {
+            public function enqueue_admin_css() {
                 wp_enqueue_style( 'remove-yoast', plugins_url( 'admin.css', __FILE__ ), array(), false );
             }
 
