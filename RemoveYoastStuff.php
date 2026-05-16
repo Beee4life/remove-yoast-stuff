@@ -3,8 +3,8 @@
     Plugin Name: Remove Yoast Stuff
     Version: 1.0
     Description: This plugin removes all Yoast' upsell stuff
-    Author: Aseda
-    Author URI: https://aseda.nl
+    Author: Beee
+    Author URI: https://berryplasman.com
 
     http://www.berryplasman.com
        ___  ____ ____ ____
@@ -15,19 +15,12 @@
     */
 
     if ( ! defined( 'ABSPATH' ) ) {
-        exit; // Exit if accessed directly
+        exit;
     }
 
     if ( ! class_exists( 'RemoveYoastStuff' ) ) :
 
-        /**
-         * Main class
-         */
         class RemoveYoastStuff {
-
-            /**
-             *  A dummy constructor to ensure plugin is only initialized once
-             */
             public function __construct() {
                 add_action( 'admin_enqueue_scripts',  [ $this, 'pb_enqueue_admin_css' ] );
 
@@ -52,4 +45,4 @@
 
         RemoveYoastStuff::get_instance();
 
-    endif; // class_exists check
+    endif;
