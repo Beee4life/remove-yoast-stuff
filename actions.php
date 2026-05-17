@@ -120,6 +120,14 @@
     }
     add_action( 'admin_menu', 'b3_unset_yoast_menu_items' );
 
+    /**
+     * Remove the permalink notice action.
+     * Uses @remove_class_hook.
+     */
+    add_action( 'admin_init', function() {
+        remove_class_hook( 'admin_notices', 'WPSEO_Admin_Init', 'permalink_settings_notice' );
+    });
+
     /*
      * Disable Yoast dropdowns
      * @src: https://wordpress.stackexchange.com/a/300965/103402

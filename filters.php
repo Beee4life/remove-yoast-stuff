@@ -1,4 +1,7 @@
 <?php
+    // remove Yoast's marketing comments in source
+    add_filter( 'wpseo_debug_markers', '__return_false' );
+
     function b3_filter_admin_pages1( $value ) {
         if ( is_array( $value ) ) {
             foreach( $value as $main_key => $values ) {
