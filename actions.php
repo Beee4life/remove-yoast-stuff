@@ -1,4 +1,6 @@
 <?php
+    if ( ! defined( 'ABSPATH' ) ) exit;
+
     /*
      * Unbind Yoast's awful constant upsell notifications whenever you trash/delete anything
      *

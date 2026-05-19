@@ -5,8 +5,8 @@
     Description: This plugin removes all Yoast' upsell stuff
     Author: Beee
     Author URI: https://berryplasman.com
-
-    http://www.berryplasman.com
+    License:        GPLv2 or later
+    License URI:    https://www.gnu.org/licenses/gpl.html
        ___  ____ ____ ____
       / _ )/ __/  __/  __/
      / _  / _/   _/   _/
@@ -29,7 +29,7 @@
             }
 
             public function enqueue_admin_css() {
-                wp_enqueue_style( 'remove-yoast', plugins_url( 'admin.css', __FILE__ ), array(), false );
+                wp_enqueue_style( 'remove-yoast', plugins_url( 'admin.css', __FILE__ ), array(), '1.0' );
             }
 
             public static function get_instance() {

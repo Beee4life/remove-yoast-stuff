@@ -1,4 +1,6 @@
 <?php
+    if ( ! defined( 'ABSPATH' ) ) exit;
+
     // remove Yoast's marketing comments in source
     add_filter( 'wpseo_debug_markers', '__return_false' );
 

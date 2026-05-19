@@ -1,4 +1,4 @@
-# Remove Yoast stuff
+# Remove Yoast Stuff
 
 This plugin aims to remove all upsells and unncessary bullshit added by Yoast's Wordpress SEO plugin.
 
