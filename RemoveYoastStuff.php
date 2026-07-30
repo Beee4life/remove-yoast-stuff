@@ -1,10 +1,11 @@
 <?php
     /*
-    Plugin Name: Remove Yoast Stuff
-    Version: 1.0
-    Description: This plugin removes all Yoast' upsell stuff
-    Author: Beee
-    Author URI: https://berryplasman.com
+    Plugin Name:    Remove Yoast Stuff
+    Version:        1.0
+    Description:    This plugin removes all Yoast' upsell stuff
+    Author:         Beee
+    Author URI:     https://berryplasman.com
+    Plugin URI:     https://github.com/Beee4life/remove-yoast-stuff
     License:        GPLv2 or later
     License URI:    https://www.gnu.org/licenses/gpl.html
        ___  ____ ____ ____
