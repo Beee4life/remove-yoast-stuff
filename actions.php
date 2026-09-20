@@ -114,7 +114,6 @@
 
     function b3_unset_yoast_menu_items() {
         global $submenu;
-        // unset( $submenu[ 'wpseo_dashboard' ][ 1 ] ); // settings
         unset( $submenu[ 'wpseo_dashboard' ][ 2 ] ); // integrations
         unset( $submenu[ 'wpseo_dashboard' ][ 3 ] ); // tools
         unset( $submenu[ 'wpseo_dashboard' ][ 4 ] ); // academy
