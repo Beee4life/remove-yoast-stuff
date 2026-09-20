@@ -2,7 +2,7 @@
     /*
     Plugin Name:    Remove Yoast Stuff
     Version:        1.1.0
-    Description:    This plugin removes all Yoast' upsell stuff
+    Description:    This plugin removes all Yoast's upsell stuff
     Author:         Beee
     Author URI:     https://berryplasman.com
     Plugin URI:     https://github.com/Beee4life/remove-yoast-stuff
