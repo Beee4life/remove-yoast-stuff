@@ -43,6 +43,9 @@
             }
 
             public function b3_settings_link( $links ) {
+                $settings_link = [ 'settings' => sprintf( '<a href="%s">%s</a>', admin_url( 'admin.php?page=remove-yoast' ), esc_html__( 'Settings', 'remove-yoast-stuff' ) ) ];
+
+                return array_merge( $settings_link, $links );
             }
 
             public function handle_settings_form() {
@@ -56,8 +59,6 @@
                         if ( isset( $_POST[ 'enable_yoast_options' ] ) && ! empty( $_POST[ 'enable_yoast_options' ] ) ) {
                             $keys   = array_map( 'intval', $_POST[ 'enable_yoast_options' ] );
                             $keys[] = 0;
-                            // echo '<pre>'; var_dump($keys); echo '</pre>'; exit;
-                            // delete_option( $option_key );
                             update_option( $option_key, $keys );
                         } else {
                             $keys = [0];
