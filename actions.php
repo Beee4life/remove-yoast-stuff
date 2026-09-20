@@ -114,14 +114,19 @@
 
     function b3_unset_yoast_menu_items() {
         global $submenu;
-        // unset( $submenu[ 'wpseo_dashboard' ][ 2 ] ); // integrations
-        unset( $submenu[ 'wpseo_dashboard' ][ 3 ] ); // academy
-        unset( $submenu[ 'wpseo_dashboard' ][ 4 ] ); // bulk editor
-        unset( $submenu[ 'wpseo_dashboard' ][ 5 ] ); // support
-        unset( $submenu[ 'wpseo_dashboard' ][ 6 ] ); // upgrade button
-        unset( $submenu[ 'wpseo_dashboard' ][ 7 ] ); // AI insights button
+        // unset( $submenu[ 'wpseo_dashboard' ][ 1 ] ); // settings
+        unset( $submenu[ 'wpseo_dashboard' ][ 2 ] ); // integrations
+        unset( $submenu[ 'wpseo_dashboard' ][ 3 ] ); // tools
+        unset( $submenu[ 'wpseo_dashboard' ][ 4 ] ); // academy
+        unset( $submenu[ 'wpseo_dashboard' ][ 5 ] ); // plans (premium)
+        unset( $submenu[ 'wpseo_dashboard' ][ 6 ] ); // workouts (premium)
+        unset( $submenu[ 'wpseo_dashboard' ][ 7 ] ); // redirects (premium)
+        unset( $submenu[ 'wpseo_dashboard' ][ 8 ] ); // bulk editor
+        unset( $submenu[ 'wpseo_dashboard' ][ 9 ] ); // support
+        unset( $submenu[ 'wpseo_dashboard' ][ 10 ] ); // upgrade
+        unset( $submenu[ 'wpseo_dashboard' ][ 11 ] ); // ai insights
     }
-    add_action( 'admin_menu', 'b3_unset_yoast_menu_items' );
+    add_action( 'admin_menu', 'b3_unset_yoast_menu_items', 50 );
 
     /**
      * Remove the permalink notice action.
