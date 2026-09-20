@@ -114,14 +114,23 @@
 
     function b3_unset_yoast_menu_items() {
         global $submenu;
-        // unset( $submenu[ 'wpseo_dashboard' ][ 2 ] ); // integrations
-        unset( $submenu[ 'wpseo_dashboard' ][ 3 ] ); // academy
-        unset( $submenu[ 'wpseo_dashboard' ][ 4 ] ); // bulk editor
-        unset( $submenu[ 'wpseo_dashboard' ][ 5 ] ); // support
-        unset( $submenu[ 'wpseo_dashboard' ][ 6 ] ); // upgrade button
-        unset( $submenu[ 'wpseo_dashboard' ][ 7 ] ); // AI insights button
+        $shown_menu_items = get_option( 'enable_yoast_menu', [] );
+
+        if ( isset( $submenu[ 'tools.php' ][ 33 ] ) ) {
+            if ( isset( $submenu[ 'tools.php' ][ 33 ][ 2 ] ) && 'wpseo_redirects_tools' === $submenu[ 'tools.php' ][ 33 ][ 2 ] ) {
+                unset( $submenu[ 'tools.php' ][ 33 ] );
+            }
+        }
+
+        if ( isset( $submenu[ 'wpseo_dashboard' ] ) && is_array( $submenu[ 'wpseo_dashboard' ] ) ) {
+            foreach( $submenu[ 'wpseo_dashboard' ] as $key => $menu_item ) {
+                if ( ! in_array( $key, $shown_menu_items ) ) {
+                    unset( $submenu[ 'wpseo_dashboard' ][ $key ] );
+                }
+            }
+        }
     }
-    add_action( 'admin_menu', 'b3_unset_yoast_menu_items' );
+    add_action( 'admin_menu', 'b3_unset_yoast_menu_items', 50 );
 
     /**
      * Remove the permalink notice action.
