@@ -6,7 +6,7 @@
     function remove_yoast_settings() {
 
         if ( ! current_user_can( 'manage_options' ) ) {
-            wp_die( esc_html__( 'Sorry, you do not have sufficient permissions to access this page.', 'remvoe-yoast-stuff' ) );
+            wp_die( esc_html__( 'Sorry, you do not have sufficient permissions to access this page.', 'remove-yoast-stuff' ) );
         }
 
         $shown_menu_items = get_option( 'enable_yoast_menu', [] );

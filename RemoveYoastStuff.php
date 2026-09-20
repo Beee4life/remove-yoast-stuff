@@ -24,10 +24,10 @@
         class RemoveYoastStuff {
             public function __construct() {
                 add_action( 'admin_enqueue_scripts',  [ $this, 'enqueue_admin_css' ] );
-                add_action( 'admin_menu',               [ $this, 'add_admin_pages' ] );
-                add_action( 'admin_init',               [ $this, 'handle_settings_form' ] );
+                add_action( 'admin_menu',             [ $this, 'add_admin_pages' ] );
+                add_action( 'admin_init',             [ $this, 'handle_settings_form' ] );
 
-                add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), [ $this, 'b3_settings_link' ] );
+                add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), [ $this, 'plugin_settings_link' ] );
 
                 include 'actions.php';
                 include 'filters.php';
@@ -42,7 +42,7 @@
                 add_submenu_page( 'admin.php', 'Remove Yoast Settings', 'Remove Yoast Settings', 'manage_options', 'remove-yoast', 'remove_yoast_settings', 95 );
             }
 
-            public function b3_settings_link( $links ) {
+            public function plugin_settings_link( $links ) {
                 $settings_link = [ 'settings' => sprintf( '<a href="%s">%s</a>', admin_url( 'admin.php?page=remove-yoast' ), esc_html__( 'Settings', 'remove-yoast-stuff' ) ) ];
 
                 return array_merge( $settings_link, $links );
