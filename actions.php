@@ -116,9 +116,11 @@
         global $submenu;
         $shown_menu_items = get_option( 'enable_yoast_menu', [] );
 
-        if ( isset( $submenu[ 'tools.php' ][ 33 ] ) ) {
-            if ( isset( $submenu[ 'tools.php' ][ 33 ][ 2 ] ) && 'wpseo_redirects_tools' === $submenu[ 'tools.php' ][ 33 ][ 2 ] ) {
-                unset( $submenu[ 'tools.php' ][ 33 ] );
+        if ( isset( $submenu[ 'tools.php' ] ) ) {
+            foreach( $submenu[ 'tools.php' ] as $position => $menu_item ) {
+                if ( 'wpseo_redirects_tools' == $menu_item[2]) {
+                    unset( $submenu[ 'tools.php' ][ $position ] );
+                }
             }
         }
 
