@@ -1,7 +1,7 @@
 <?php
     /*
     Plugin Name:    Remove Yoast Stuff
-    Version:        1.1.0
+    Version:        1.2.0
     Description:    This plugin removes all Yoast's upsell stuff
     Author:         Beee
     Author URI:     https://berryplasman.com
@@ -34,7 +34,7 @@
             }
 
             public function enqueue_admin_css() {
-                wp_enqueue_style( 'remove-yoast', plugins_url( 'admin/admin.css', __FILE__ ), [], '1.1.0' );
+                wp_enqueue_style( 'remove-yoast', plugins_url( 'admin/admin.css', __FILE__ ), [], '1.2.0' );
             }
 
             public function add_admin_pages() {
